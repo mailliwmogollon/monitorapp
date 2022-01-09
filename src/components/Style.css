@@ -26,3 +26,16 @@
     cursor: pointer;
   }
 
+  .ul-form-container {
+    line-height: 2;
+    margin-top: 8px;
+    margin-bottom: 20px;
+    margin-left: 2px;
+    padding: 5px 42px 5px 10px;
+    width: 100%;
+    color:white;
+    background-color: #cc095d;
+    border: #cc095d solid 2px;
+    font-size: 20px;
+  }
+
