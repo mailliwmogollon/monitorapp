@@ -1,7 +1,7 @@
 import './Style.css';
 
 //Hooks
-import { useState, useEffect} from 'react'; 
+import { useState} from 'react'; 
 
 export default function StockList() {
 
