@@ -37,15 +37,6 @@ export default function StockList() {
 
       }
 
-      useEffect(() => {
-          const interval = setInterval(() => {
-            handleSubmit();
-          }, 20000);
-          return() => clearInterval(interval);
-      });
-  
-
-
   return (
     <div className="container">
       <form  onSubmit={handleSubmit} className='form-container'>
