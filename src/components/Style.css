@@ -1,0 +1,28 @@
+.input-form-container {
+    border-radius: 25px;
+    line-height: 2;
+    margin-top: 8px;
+    margin-bottom: 20px;
+    padding: 5px 42px 5px 10px;
+    width: 40%;
+    border: #cc095d solid 2px;
+  }
+
+  .input-form-container:focus {
+    outline: #cc095d; 
+  }
+
+  .button-form-container {
+    border-radius: 50px;
+    line-height: 2;
+    margin-top: 8px;
+    margin-bottom: 20px;
+    margin-left: 2px;
+    padding: 5px 42px 5px 10px;
+    width: 2%;
+    color:white;
+    background-color: #cc095d;
+    border: #cc095d solid 2px;
+    cursor: pointer;
+  }
+

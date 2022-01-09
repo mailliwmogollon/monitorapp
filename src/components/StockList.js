@@ -1,3 +1,5 @@
+import './Style.css';
+
 //Hooks
 import { useState, useEffect} from 'react'; 
 
@@ -22,8 +24,8 @@ export default function StockList() {
 
       .then((response) => response.json())
       
-      .then((event) => {
-        let price = event.c;
+      .then((data) => {
+        let price = data.c;
         const stocks = `${stock.toUpperCase()} price ${price} - `
         const newstocks = output.concat(`${stocks}`)
         setOutput(newstocks);
@@ -45,19 +47,20 @@ export default function StockList() {
 
 
   return (
-    <div className="App">
-      <form  onSubmit={handleSubmit}>
+    <div className="container">
+      <form  onSubmit={handleSubmit} className='form-container'>
       <input
          placeholder="Stock Name"
          type="search"
          aria-label="Search stock name"
          value={stock}
          onInput={(event) => setStock(event.target.value)}
+         className='input-form-container'
         />
-      <button>
-        search
+      <button className='button-form-container'>
+        Go!
       </button>
-      <ul id="output">
+      <ul id="output" className='ul-form-container'>
       {output}
       </ul>
       </form>
