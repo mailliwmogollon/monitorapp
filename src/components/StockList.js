@@ -22,7 +22,6 @@ export default function App() {
       .then(
         (data) => {
           let price = data.c;
-          //const newprice = `${stock.toUpperCase()} price ${price}`;
           const stockList = {
             stock: stock.toUpperCase(),
             price: price
@@ -49,7 +48,7 @@ export default function App() {
           onInput={(event) => setStock(event.target.value)}
           className="input-form-container"
         />
-        <button className="button-form-container">Go</button>
+        <button className="button-form-container">Go!</button>
       </form>
       {prices?.length > 0 ? (
         <ul id="prices" className="ul-form-container">
