@@ -1,15 +1,33 @@
 import './Style.css';
 
-
 //Hooks
-import { useState} from "react";
+import { useState, useEffect } from "react";
 
 export default function App() {
   const [stock, setStock] = useState("");
   const [prices, setPrices] = useState([]);
+  const [stockSearch, setStockSearch] = useState([]);
 
   const url = "https://finnhub.io/api/v1/quote?";
   const token = "c7be732ad3ia366fsgg0";
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (stockSearch != null) {
+        console.log(stockSearch);
+        stockSearch.map(function (data) {
+          updatePrice(data);
+        });
+      }
+    }, 20000);
+    return () => clearInterval(interval);
+  }, [stockSearch]);
+
+  const updatePrice = (data) => {
+    console.log("entro en update: " + data);
+    setPrices("");
+    fetchUse(data);
+  };
 
   const stockURL = (stock) => {
     let name = stock.toUpperCase();
@@ -22,6 +40,7 @@ export default function App() {
       .then(
         (data) => {
           let price = data.c;
+          //const newprice = `${stock.toUpperCase()} price ${price}`;
           const stockList = {
             stock: stock.toUpperCase(),
             price: price
@@ -33,6 +52,7 @@ export default function App() {
   };
   const handleSubmit = async (event) => {
     event.preventDefault();
+    setStockSearch((stockSearch) => [...stockSearch, stock]);
     fetchUse(stock);
     setStock("");
   };
@@ -48,7 +68,7 @@ export default function App() {
           onInput={(event) => setStock(event.target.value)}
           className="input-form-container"
         />
-        <button className="button-form-container">Go!</button>
+        <button className="button-form-container">Go</button>
       </form>
       {prices?.length > 0 ? (
         <ul id="prices" className="ul-form-container">
