@@ -3,7 +3,7 @@ import './Style.css';
 //Hooks
 import { useState, useEffect } from "react";
 
-export default function App() {
+export default function StockList() {
   const [stock, setStock] = useState("");
   const [prices, setPrices] = useState([]);
   const [stockSearch, setStockSearch] = useState([]);
