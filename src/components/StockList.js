@@ -35,21 +35,16 @@ export default function StockList() {
   };
 
   const fetchUse = async (stock) => {
-    fetch(stockURL(stock))
-      .then((response) => response.json())
-      .then(
-        (data) => {
-          let price = data.c;
-          //const newprice = `${stock.toUpperCase()} price ${price}`;
-          const stockList = {
+  const response = await fetch(stockURL(stock));
+  const data = await response.json();
+     let price = data.c;
+     const stockList = {
             stock: stock.toUpperCase(),
             price: price
           };
-          setPrices((prices) => [...prices, stockList]);
-        },
-        [setPrices]
-      );
-  };
+    setPrices(prices => [...prices, stockList]);
+        }
+
   const handleSubmit = async (event) => {
     event.preventDefault();
     setStockSearch((stockSearch) => [...stockSearch, stock]);
