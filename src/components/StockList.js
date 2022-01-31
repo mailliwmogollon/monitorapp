@@ -46,10 +46,24 @@ export default function StockList() {
         }
 
   const handleSubmit = async (event) => {
+
+    const checkStock = stockSearch.includes(stock);
+
     event.preventDefault();
+
+    if (checkStock === true) {
+
+      window.alert( `the stock is already included in your list.`)
+
+    } else {
+
     setStockSearch((stockSearch) => [...stockSearch, stock]);
     fetchUse(stock);
     setStock("");
+
+
+    }
+
   };
 
   return (
@@ -63,7 +77,7 @@ export default function StockList() {
           onInput={(event) => setStock(event.target.value)}
           className="input-form-container"
         />
-        <button className="button-form-container">Go</button>
+        <button className="button-form-container">Go!</button>
       </form>
       {prices?.length > 0 ? (
         <ul id="prices" className="ul-form-container">
