@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/monitorapp/static/css/main.d214f348.css",
+    "main.js": "/monitorapp/static/js/main.df1cf2c4.js",
+    "index.html": "/monitorapp/index.html",
+    "main.d214f348.css.map": "/monitorapp/static/css/main.d214f348.css.map",
+    "main.df1cf2c4.js.map": "/monitorapp/static/js/main.df1cf2c4.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d214f348.css",
+    "static/js/main.df1cf2c4.js"
+  ]
+}
